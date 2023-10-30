@@ -1,8 +1,5 @@
-import typography from '@tailwindcss/typography'
 import { Config } from 'tailwindcss'
-import { fontFamily } from 'tailwindcss/defaultTheme'
 import animate from 'tailwindcss-animate'
-
 export default {
     darkMode: ['class'],
     content: [
@@ -55,9 +52,6 @@ export default {
                     foreground: 'hsl(var(--card-foreground))',
                 },
             },
-            fontFamily: {
-                default: ['var(--font-inter)', ...fontFamily.sans],
-            },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
@@ -79,5 +73,5 @@ export default {
             },
         },
     },
-    plugins: [typography, animate],
+    plugins: [animate],
 } satisfies Config

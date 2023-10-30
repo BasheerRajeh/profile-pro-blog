@@ -8,7 +8,7 @@
     "style": "default",
     "tailwind": {
         "config": "tailwind.config.ts",
-        "css": "app/globals.css",
+        "css": "public/styles/global.css",
         "baseColor": "zinc",
         "cssVariables": true
     },
