@@ -1,5 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs'
-import components from '../components.json'
+import path from 'path'
 
 const config: StorybookConfig = {
     stories: [
@@ -12,6 +12,15 @@ const config: StorybookConfig = {
         '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
     ],
+    webpackFinal: async (config, { configType }) => {
+        if (config.resolve)
+            config.resolve.alias = {
+                ...config.resolve.alias,
+                '@/public': path.resolve(__dirname, '../public'),
+                '@/components': path.resolve(__dirname, '../components'),
+            }
+        return config
+    },
     framework: {
         name: '@storybook/nextjs',
         options: {},
