@@ -11,7 +11,10 @@ type Site = {
 }
 
 export const site: Site = {
-    url: 'http://127.0.0.1:3000',
+    url:
+        process.env.NODE_ENV === 'development'
+            ? 'http://127.0.0.1:3000/'
+            : 'https://profile-pro-blog.vercel.app/',
     title: 'Next Project Template',
     name: 'TNext',
     keywords: ['template', 'next-template', 'full-stack next'],
