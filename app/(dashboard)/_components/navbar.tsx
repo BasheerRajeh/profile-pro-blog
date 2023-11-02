@@ -1,9 +1,17 @@
-import MobileSidebar from './mobile-sidebar'
+import { getCurrentUser } from '@/lib/get-current-user'
 
-const Navbar = () => {
+import MobileSidebar from './mobile-sidebar'
+import UserControlMenu from './user-control-menu'
+
+const Navbar = async () => {
+    const user = await getCurrentUser()
+
     return (
-        <div className='flex h-full items-center p-4'>
-            <MobileSidebar />
+        <div className='flex h-full items-center justify-between p-4'>
+            <div>
+                <MobileSidebar />
+            </div>
+            <UserControlMenu user={user} />
         </div>
     )
 }
